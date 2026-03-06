@@ -51,12 +51,15 @@
   },
   "permissions": {
     "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "mcp__playwright__**",
       "Bash(npm:*)",
       "Bash(npx:*)",
       "Bash(pnpm:*)",
       "Bash(node:*)",
       "Bash(tsx:*)",
-      "Bash(python3:*)",
+      "Bash(docker-compose:*)",
+      "Bash(docker:*)",
       "Bash(git:*)",
       "Bash(cat:*)",
       "Bash(ls:*)",
@@ -69,9 +72,9 @@
       "Bash(find:*)",
       "Bash(echo:*)",
       "Bash(curl:*)",
+      "Bash(drizzle-kit:*)",
       "Bash(vitest:*)",
-      "Bash(jest:*)",
-      "Bash(playwright:*)",
+      "Bash(ln:*)",
       "Read",
       "Edit",
       "Write",
@@ -80,13 +83,18 @@
       "WebFetch",
       "WebSearch"
     ],
+    "ask": ["Bash(sudo:*)"],
     "deny": [
-      "Bash(rm:*)",
       "Bash(git push --force:*)",
       "Bash(git push -f:*)",
       "Bash(git reset --hard:*)",
+      "Bash(rm:*)",
       "Bash(rm -rf /:*)",
-      "Bash(rm -rf ~:*)"
-    ]
+      "Bash(rm -rf ~:*)",
+      "Read(./.env)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)"
+    ],
+    "defaultMode": "dontAsk"
   }
 }
