@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "<start local dev server>",
+    "build": "<build command>",
+    "test": "<unit/integration tests>",
+    "check": "<type check or static check>",
+    "lint": "<lint command>",
+    "test:e2e": "<optional playwright/cypress command>"
+  }
+}
