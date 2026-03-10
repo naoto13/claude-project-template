@@ -8,8 +8,8 @@
 | やりたいこと | まず読む | 次に読む |
 |---|---|---|
 | 全体像を掴む | `CLAUDE.md` | `docs/architecture.md` |
-| 新機能を実装する | `docs/spec/` の該当仕様 | `docs/architecture.md` |
-| 次のタスクを探す | `docs/todo.md` | `docs/domain/phase-roadmap.md` |
+| 新機能を実装する | `spec/` の該当仕様 | `docs/architecture.md` |
+| 次のタスクを探す | `todo.md` | `docs/domain/phase-roadmap.md` |
 | ローカル開発 | `docs/local-dev.md` | `package.json` |
 | ドメイン理解 | `docs/domain/business-model.md` | `docs/domain/data-model.md` |
 
@@ -30,8 +30,8 @@ docs/       プロジェクト知識ベース
 | ファイル | 役割 |
 |---|---|
 | `docs/architecture.md` | アーキテクチャマップ。レイヤー、依存方向、主要フロー |
-| `docs/todo.md` | 唯一のタスク管理ソース |
-| `docs/spec/` | 機能仕様書 |
+| `todo.md` | 唯一のタスク管理ソース |
+| `spec/` | 機能仕様書 |
 | `docs/domain/` | ビジネスルール、データモデル、Phase 計画 |
 | `docs/local-dev.md` | ローカル開発手順 |
 
@@ -49,7 +49,7 @@ pnpm lint
 
 ## Critical Rules
 
-- 実装前に `docs/architecture.md` と関連仕様を読む
+- 実装前に `docs/architecture.md` と `spec/` の関連仕様を読む
 - 仕様やスキーマを変更したら、関連ドキュメントも同じ変更で更新する
 - 完了報告前に、存在するテスト・型チェック・ビルドを実行する
 - 秘密情報はハードコードしない

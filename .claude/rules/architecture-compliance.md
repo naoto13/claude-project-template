@@ -1,26 +1,40 @@
 # アーキテクチャ準拠ルール
 
 ## 前提
-`docs/architecture.md` がコードベースの地図。実装前に必ず参照すること。
+docs/architecture.md がコードベースの"地図"。実装前に必ず参照すること。
 
 ## 必須ルール
 
 ### 1. レイヤー依存方向を守る
-- 依存方向は `docs/architecture.md` に定義されたルールに従う
-- 下位レイヤーから上位レイヤーへの逆流を作らない
-- 例外が必要なら `docs/architecture.md` に明記する
+```
+drizzle/ → shared/ → client/
+                    → server/
+```
+
+| 禁止パターン | 理由 |
+|-------------|------|
+| client/ から server/ をランタイムimport | tRPC経由のみ（import type は許可） |
+| shared/ から server/ または client/ をimport | 共有層は下位レイヤーのみ参照 |
+| drizzle/ から他レイヤーをimport | データ層は独立 |
+
+違反は `server/structural.test.ts` で自動検出される。
 
 ### 2. 新規ファイル作成時はレイヤーを意識する
-- UI 層のロジックは UI 層へ置く
-- 共有型・定数は共有層へ置く
-- API ロジックは API / Service 層へ置く
-- データ定義はデータ層へ置く
+- UI層のロジック → `client/src/`
+- 共有型・定数 → `shared/`
+- APIロジック → `server/`
+- テーブル定義 → `drizzle/schema.ts`
 
-### 3. ログは既存の構造化ログ規約に従う
-- `console.log/warn/error` の直書きは避ける
-- 既存の logger ラッパーや共通ログ基盤があるならそれを使う
-- 開発用と本番用でフォーマットが異なる場合は、既存方針を守る
+### 3. ログは構造化ログを使う
+server/ 内で `console.log/warn/error` を直接使わない。
 
-## 推奨
-- 依存違反を検出するテストがあるなら維持・拡張する
-- 新しいレイヤーや責務境界を追加したら `docs/architecture.md` を更新する
+```typescript
+import { createLogger } from "./logger";
+const log = createLogger("ModuleName");
+
+log.info("message", { key: "value" });
+log.error("failed", { error: String(error) });
+```
+
+- 本番: JSON形式で出力（パース・検索可能）
+- 開発: `[Module] message` 形式（可読性重視）

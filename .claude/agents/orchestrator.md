@@ -28,7 +28,7 @@ model: sonnet
 
 ## Execution Protocol
 
-1. 要求を `docs/architecture.md`、`docs/domain/*`、`docs/todo.md` と照合する
+1. 要求を `docs/architecture.md`、`docs/domain/*`、`todo.md` と照合する
 2. スコープを明確化し、必要なら `product-owner` に仕様化を委任する
 3. 実装タスクを `senior-engineer` に割り振る
 4. レビューが必要なら `api-reviewer` を使う

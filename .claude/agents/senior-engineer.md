@@ -25,7 +25,7 @@ model: sonnet
 - `CLAUDE.md`
 - `docs/architecture.md`
 - `docs/domain/data-model.md`
-- 関連する `docs/spec/*.md`
+- 関連する `spec/*.md`
 
 ## Execution Protocol
 

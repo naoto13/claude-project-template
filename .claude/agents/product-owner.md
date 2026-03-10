@@ -20,15 +20,15 @@ model: sonnet
 - `docs/architecture.md`
 - `docs/domain/business-model.md`
 - `docs/domain/phase-roadmap.md`
-- `docs/todo.md`
-- `docs/spec/_template.md`
+- `todo.md`
+- `spec/_template.md`
 
 ## Execution Protocol
 
 1. 既存仕様と TODO を読み、重複や矛盾を確認する
 2. 新機能の目的、対象ユーザー、スコープ、非スコープを明確にする
-3. `docs/spec/` に仕様書を追加または更新する
-4. `docs/todo.md` に実行可能な粒度でタスクを記載する
+3. `spec/` に仕様書を追加または更新する
+4. `todo.md` に実行可能な粒度でタスクを記載する
 5. 判断が必要な場合は、案ごとのメリット・デメリットを示して推奨案を添える
 
 ## Quality Checklist
