@@ -63,7 +63,8 @@ Claude Code を前提にしたプロジェクトテンプレート。
 | `todo.md` | 唯一のタスク管理ソース |
 | `spec/` | 機能仕様書 |
 | `docs/domain/` | ビジネスルール、データモデル、Phase 計画 |
-| `docs/local-dev.md` | ローカル開発手順 |
+| `docs/local-dev.md` | ローカル・クラウド開発手順 |
+| `docs/auth-and-db.md` | DB接続・認証の環境別切り替えガイド |
 
 ## クラウド環境対応 (Claude Code Remote)
 
