@@ -40,11 +40,13 @@ docs/       プロジェクト知識ベース
 移植先の `package.json` に合わせてこのセクションを更新してください。
 
 ```bash
-pnpm dev
-pnpm build
-pnpm test
-pnpm check
-pnpm lint
+pnpm dev          # 開発サーバー
+pnpm build        # 本番ビルド
+pnpm test         # テスト
+pnpm check        # 型チェック
+pnpm format       # Biome フォーマット
+pnpm lint         # Biome + Oxlint リント
+pnpm lint:fix     # リント自動修正
 ```
 
 ## Critical Rules

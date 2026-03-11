@@ -3,8 +3,15 @@
     "dev": "<start local dev server>",
     "build": "<build command>",
     "test": "<unit/integration tests>",
-    "check": "<type check or static check>",
-    "lint": "<lint command>",
+    "check": "tsc --noEmit",
+    "format": "biome format --write .",
+    "lint": "biome check && oxlint -c oxlint.json",
+    "lint:fix": "biome check --write && oxlint -c oxlint.json --fix",
     "test:e2e": "<optional playwright/cypress command>"
+  },
+  "devDependencies_template": {
+    "@biomejs/biome": "^2.4.0",
+    "oxlint": "^1.52.0",
+    "@evilmartians/lefthook": "^2.1.0"
   }
 }

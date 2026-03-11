@@ -3,6 +3,8 @@
 このテンプレートを他プロジェクトへ入れたら、最初に以下を更新してください。
 
 ## 必須
+- Biome + Oxlint + Lefthook をインストール: `pnpm add -D @biomejs/biome oxlint @evilmartians/lefthook && npx lefthook install`
+- `biome.json` の `files.includes` をプロジェクトのディレクトリ構成に合わせて更新
 - `CLAUDE.md` のプロジェクト名、構成、標準コマンド
 - `docs/architecture.md` の実ディレクトリ、依存方向、主要フロー
 - `docs/domain/business-model.md` のロール、業務フロー、重要ルール

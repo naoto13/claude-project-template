@@ -1,0 +1,11 @@
+pre-commit:
+  parallel: true
+  commands:
+    biome-check:
+      glob: "*.{js,jsx,ts,tsx,json}"
+      run: npx @biomejs/biome check --no-errors-on-unmatched {staged_files}
+    oxlint:
+      glob: "*.{js,jsx,ts,tsx}"
+      run: npx oxlint {staged_files}
+    typecheck:
+      run: pnpm check

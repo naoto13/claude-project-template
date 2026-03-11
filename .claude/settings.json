@@ -30,6 +30,15 @@
             "timeout": 15000
           }
         ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guard-linter-config.sh"
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -43,6 +52,16 @@
           {
             "type": "command",
             "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/audit-after-install.sh",
+            "timeout": 30000
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/post-lint-format.sh",
             "timeout": 30000
           }
         ]
@@ -102,6 +121,8 @@
       "Bash(rm:*)",
       "Bash(rm -rf /:*)",
       "Bash(rm -rf ~:*)",
+      "Bash(git commit --no-verify:*)",
+      "Bash(git commit -n:*)",
       "Read(./.env)",
       "Read(**/*.pem)",
       "Read(**/*.key)"
