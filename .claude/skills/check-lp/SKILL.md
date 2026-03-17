@@ -2,7 +2,8 @@
 name: check-lp
 description: |
   Lightweight LP sanity check that runs on every LP edit.
-  Trigger whenever the user modifies LandingPage, edits LP sections, or mentions LP修正, LP直して, LP変更, LP編集, LPセクション追加, LP更新.
+  TRIGGER when: `LandingPage.{tsx,jsx}`、`client/src/pages/*Landing*`、`client/src/components/landing/**`、LP用 i18n 文言を変更した時。会話で LP修正、LP直して、LP変更、LP編集、LPセクション追加、LP更新、hero、faq、cta、pricing section、LP文言 の依頼が出た時。
+  DO NOT TRIGGER when: 通常アプリ画面の修正、Billing ページだけの変更、LPと無関係な pricing 修正、バックエンドのみの変更。
   Quick pass/fail — no heavy analysis.
 ---
 

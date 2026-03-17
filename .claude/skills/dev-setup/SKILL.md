@@ -1,3 +1,11 @@
+---
+name: dev-setup
+description: |
+  ローカル開発環境をセットアップする。本番コードを一切変更せず、Docker DB + ローカル専用Auth で動作させる。
+  TRIGGER when: 「ローカル環境を作って」「開発環境セットアップして」「ローカルで動かしたい」「Docker DBで動かして」など、ローカル開発環境構築の依頼。
+  DO NOT TRIGGER when: 本番環境のデプロイ、CI/CDの設定、既存の環境変数の変更のみ。
+---
+
 /setup-local-dev
 
 ローカル開発環境をセットアップするコマンド。
