@@ -404,7 +404,7 @@ public/**                         — 静的アセット
 **コンテンツ**: FAQ / OGP画像(1200x630) / meta description
 **多言語**: 4言語翻訳完了 / キー欠損なし
 **レスポンシブ**: モバイル・タブレット確認
-**法的**: 利用規約 / プライバシーポリシー / 特定商取引法
+**法的**: 利用規約 / プライバシーポリシー / 特定商取引法 / Cookie同意
 **ユーザーガイド**: 使い方ガイド（ヘルプページ・オンボーディング・ドキュメント等）が存在すること — 全アプリ必須
 **決済・領収書**: 支払いが発生するアプリの場合、領収書発行機能が存在すること — Stripe/Crypto 等の決済手段に対応した領収書 or 明細表示を確認
 **技術**: TypeScriptエラーなし / ビルド通る / テストパス
@@ -416,6 +416,23 @@ public/**                         — 静的アセット
 3. i18n キーに `guide`, `help`, `howTo`, `tutorial` 関連キーがあるか Grep
 4. LP の FAQ やフッターからガイドへのリンクがあるか確認
 5. 上記いずれもなければ ❌
+
+**法的ページ検査方法**:
+1. ルーティング設定で `/terms`, `/privacy`, `/legal`, `/tokushoho`, `/cookie-policy` 等のパスがあるか確認
+2. `**/terms*`, `**/privacy*`, `**/legal*`, `**/tokushoho*` を Glob で探索
+3. i18n キーに `terms`, `privacy`, `legal`, `tokushoho`, `cookie` 関連キーがあるか Grep
+4. LP フッターから利用規約・プライバシーポリシーへのリンクがあるか確認
+5. 特定商取引法に基づく表記に必要な項目（販売業者名、所在地、連絡先、価格、支払方法、引渡時期、返品規定）が含まれているか確認
+6. 上記いずれかが欠落していれば ❌
+
+**Cookie同意検査方法**:
+1. `cookie`, `consent`, `CookieBanner`, `CookieConsent`, `gdpr` を全ファイルで Grep
+2. Cookie同意バナー/モーダルのコンポーネントが存在するか確認
+3. 同意前に分析系Cookie（Google Analytics等）やサードパーティCookieが発火していないか確認
+4. 同意の保存（localStorage / Cookie）と再表示制御のロジックがあるか確認
+5. プライバシーポリシーへのリンクがバナー内に含まれているか確認
+6. Cookie を一切使用していない場合は「該当なし」として ✅ 扱い。ただし `document.cookie`, `localStorage`, `ga(`, `gtag(`, `analytics` を Grep して本当に不使用か確認する
+7. Cookie/トラッキングを使用しているのに同意バナーがなければ ❌
 
 **領収書検査方法**:
 1. 決済機能の有無を確認: `stripe`, `crypto`, `payment`, `billing`, `checkout` を Grep

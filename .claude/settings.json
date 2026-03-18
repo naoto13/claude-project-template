@@ -127,6 +127,6 @@
       "Read(**/*.pem)",
       "Read(**/*.key)"
     ],
-    "defaultMode": "dontAsk"
+    "defaultMode": "auto"
   }
 }

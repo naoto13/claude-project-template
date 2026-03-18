@@ -58,8 +58,19 @@ codex review --uncommitted
 - **問題なし** → そのまま完了報告へ進む
 - **問題あり** → 修正を実施してから完了報告する。修正内容を報告に含める
 
+## 完了マーカー
+
+self-review を実行したら、最後に以下のコマンドを Bash で実行して完了マーカーを書き込む:
+
+```bash
+mkdir -p /tmp/claude-self-review && echo "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "/tmp/claude-self-review/${CLAUDE_SESSION_ID:-unknown}.done"
+```
+
+このマーカーは Stop hook が self-review 実行済みかを検知するために使用する。
+
 ## ルール
 
 - ループは **1回のみ**。修正後に再度レビューは行わない
 - レビュー結果をユーザーに長々と報告しない。問題がなければ触れなくてよい
 - 問題を見つけて修正した場合のみ、修正内容を簡潔に報告する
+- **完了マーカーの書き込みを忘れないこと**
