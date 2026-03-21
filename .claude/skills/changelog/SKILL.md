@@ -145,6 +145,120 @@ git push -u origin HEAD
 | `--all` | フィルタリングせず全コミットを含める |
 | `--no-push` | push を省略する |
 
+## 機械可読フォーマット仕様
+
+CHANGELOG.md はフロントエンドから自動パースされることを前提に、以下のフォーマットを **厳格に守る**。
+
+### 構造ルール
+
+```
+# Changelog                          ← H1: 固定タイトル
+                                     ← 空行
+このプロジェクトの注目すべき...        ← 説明文（任意）
+                                     ← 空行
+---                                  ← セパレータ（1回だけ）
+                                     ← 空行
+## v1.2.0 (YYYY-MM-DD)              ← H2: バージョンヘッダー
+                                     ← 空行
+### ✨ 新機能                         ← H3: カテゴリヘッダー
+- エントリ本文                        ← リストアイテム
+                                     ← 空行（カテゴリ間）
+## v1.1.0 (YYYY-MM-DD)              ← 次のバージョン
+...
+```
+
+### パース規約
+
+| 要素 | 正規表現 | 例 |
+|---|---|---|
+| バージョンヘッダー | `^## v(\d+\.\d+\.\d+) \((\d{4}-\d{2}-\d{2})\)$` | `## v1.2.0 (2026-03-21)` |
+| 日付ヘッダー（SemVer 未使用時） | `^## (\d{4}-\d{2}-\d{2})$` | `## 2026-03-21` |
+| カテゴリヘッダー | `^### (.+)$` | `### ✨ 新機能` |
+| エントリ | `^- (.+)$` | `- データを CSV でエクスポート可能に` |
+| セパレータ | `^---$` | `---` |
+
+### カテゴリ順序（固定）
+
+出力時は以下の順序を守る。該当なしのカテゴリは省略:
+
+1. `### 💥 破壊的変更`
+2. `### ✨ 新機能`
+3. `### 🐛 バグ修正`
+4. `### ⚡ 改善`
+
+### 禁止事項
+
+- エントリ内に Markdown リンクやインラインコードを含めない（プレーンテキストのみ）
+- カテゴリヘッダーの絵文字やテキストを変えない（上記4種固定）
+- バージョンヘッダーの括弧や空白の形式を変えない
+- `---` セパレータより上のヘッダー・説明文を変更しない
+
+### フロントエンド連携パターン
+
+このフォーマットに従えば、各プロジェクトのフロントエンドは以下のいずれかで CHANGELOG.md を消費できる:
+
+| 方式 | 実装例 | 適用場面 |
+|---|---|---|
+| ビルド時 MD→JSON | `scripts/parse-changelog.ts` でビルド時に JSON 化 | SSG/SSR サイト |
+| API 経由 | `/api/changelog` で raw MD を返し、クライアントでパース | SPA |
+| SSG ページ生成 | Next.js の `getStaticProps` 等で MD をパースして `/changelog` ページ生成 | Next.js / Astro |
+
+パーサーの参考実装（TypeScript）:
+
+```typescript
+interface ChangelogEntry {
+  version: string;       // "v1.2.0" or "2026-03-21"
+  date: string;          // "2026-03-21"
+  categories: {
+    label: string;       // "✨ 新機能"
+    items: string[];     // ["データを CSV でエクスポート可能に"]
+  }[];
+}
+
+function parseChangelog(md: string): ChangelogEntry[] {
+  const body = md.split(/^---$/m)[1] ?? "";
+  const entries: ChangelogEntry[] = [];
+  let current: ChangelogEntry | null = null;
+  let currentCat: { label: string; items: string[] } | null = null;
+
+  for (const line of body.split("\n")) {
+    const versionMatch = line.match(
+      /^## v(\d+\.\d+\.\d+) \((\d{4}-\d{2}-\d{2})\)$/,
+    );
+    const dateMatch = !versionMatch && line.match(/^## (\d{4}-\d{2}-\d{2})$/);
+    const catMatch = line.match(/^### (.+)$/);
+    const itemMatch = line.match(/^- (.+)$/);
+
+    if (versionMatch) {
+      current = {
+        version: `v${versionMatch[1]}`,
+        date: versionMatch[2],
+        categories: [],
+      };
+      entries.push(current);
+      currentCat = null;
+    } else if (dateMatch) {
+      current = {
+        version: dateMatch[1],
+        date: dateMatch[1],
+        categories: [],
+      };
+      entries.push(current);
+      currentCat = null;
+    } else if (catMatch && current) {
+      currentCat = { label: catMatch[1], items: [] };
+      current.categories.push(currentCat);
+    } else if (itemMatch && currentCat) {
+      currentCat.items.push(itemMatch[1]);
+    }
+  }
+  return entries;
+}
+```
+
+このパーサーはあくまで参考。各プロジェクトの技術スタックに合わせて実装する。
+スキル側の責務は **フォーマットを厳格に保つこと** のみ。
+
 ## 注意事項
 
 - CHANGELOG.md の既存エントリは **絶対に編集・削除しない**

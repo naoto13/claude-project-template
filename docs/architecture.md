@@ -39,6 +39,19 @@ Infrastructure
 3. データ層で読み書きする
 4. 整形してレスポンスを返す
 
+## CHANGELOG.md 連携パターン
+
+CHANGELOG.md は `/changelog` スキルにより機械可読フォーマットで管理される。
+フロントエンドから消費する場合は以下のいずれかのパターンを採用する。
+
+| 方式 | 説明 | 適用場面 |
+|---|---|---|
+| ビルド時 MD→JSON | `scripts/parse-changelog.ts` 等でビルド時に JSON 変換 | SSG/SSR |
+| API 経由 | `/api/changelog` で raw MD を返し、クライアントでパース | SPA |
+| SSG ページ生成 | `getStaticProps` 等で MD パースし `/changelog` ページ生成 | Next.js / Astro |
+
+フォーマット仕様の詳細は `.claude/skills/changelog/SKILL.md` の「機械可読フォーマット仕様」セクションを参照。
+
 ## アーキテクチャ判断メモ
 
 - なぜその分割なのか
