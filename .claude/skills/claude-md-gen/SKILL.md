@@ -1,7 +1,6 @@
 ---
 name: claude-md-gen
 description: CLAUDE.md（agent.md）をプロジェクトの実態に合わせて生成・更新する。新規プロジェクトのセットアップ時、既存プロジェクトの AI 対応度を上げたい時、CLAUDE.md が空テンプレートのままの時に使用する。「CLAUDE.md を作って」「agent.md を生成」「AI 対応セットアップ」「CLAUDE.md を更新して」などに対応。
-disable-model-invocation: true
 argument-hint: [new|update]
 ---
 
