@@ -38,8 +38,22 @@ def validate_skill(skill_path):
     except yaml.YAMLError as e:
         return False, f"Invalid YAML in frontmatter: {e}"
 
-    # Define allowed properties
-    ALLOWED_PROPERTIES = {'name', 'description', 'license', 'allowed-tools', 'metadata'}
+    # Define allowed properties (per official Agent Skills spec)
+    ALLOWED_PROPERTIES = {
+        'name', 'description', 'license',
+        'allowed-tools', 'metadata',
+        'argument-hint',
+        'disable-model-invocation',
+        'user-invocable',
+        'model',
+        'effort',
+        'context',
+        'agent',
+        'hooks',
+    }
+
+    # Reserved words that cannot appear in name
+    RESERVED_WORDS = {'anthropic', 'claude'}
 
     # Check for unexpected properties (excluding nested keys under metadata)
     unexpected_keys = set(frontmatter.keys()) - ALLOWED_PROPERTIES
@@ -49,17 +63,17 @@ def validate_skill(skill_path):
             f"Allowed properties are: {', '.join(sorted(ALLOWED_PROPERTIES))}"
         )
 
-    # Check required fields
-    if 'name' not in frontmatter:
-        return False, "Missing 'name' in frontmatter"
-    if 'description' not in frontmatter:
-        return False, "Missing 'description' in frontmatter"
+    # name is recommended but not required (directory name is used as fallback)
+    # description is recommended but not required (first paragraph is used as fallback)
 
     # Extract name for validation
     name = frontmatter.get('name', '')
-    if not isinstance(name, str):
+    if name is not None and not isinstance(name, str):
         return False, f"Name must be a string, got {type(name).__name__}"
-    name = name.strip()
+    if isinstance(name, str):
+        name = name.strip()
+    else:
+        name = ''
     if name:
         # Check naming convention (hyphen-case: lowercase with hyphens)
         if not re.match(r'^[a-z0-9-]+$', name):
@@ -69,19 +83,39 @@ def validate_skill(skill_path):
         # Check name length (max 64 characters per spec)
         if len(name) > 64:
             return False, f"Name is too long ({len(name)} characters). Maximum is 64 characters."
+        # Check for XML tags in name
+        if '<' in name or '>' in name:
+            return False, "Name cannot contain angle brackets (< or >)"
+        # Check for reserved words
+        for reserved in RESERVED_WORDS:
+            if reserved in name:
+                return False, f"Name cannot contain reserved word '{reserved}'"
 
     # Extract and validate description
     description = frontmatter.get('description', '')
-    if not isinstance(description, str):
+    if description is not None and not isinstance(description, str):
         return False, f"Description must be a string, got {type(description).__name__}"
-    description = description.strip()
+    if isinstance(description, str):
+        description = description.strip()
+    else:
+        description = ''
     if description:
-        # Check for angle brackets
+        # Check for angle brackets (XML tags)
         if '<' in description or '>' in description:
             return False, "Description cannot contain angle brackets (< or >)"
         # Check description length (max 1024 characters per spec)
         if len(description) > 1024:
             return False, f"Description is too long ({len(description)} characters). Maximum is 1024 characters."
+
+    # Validate effort field if present
+    effort = frontmatter.get('effort')
+    if effort is not None and effort not in ('low', 'medium', 'high', 'max'):
+        return False, f"Invalid effort value '{effort}'. Must be one of: low, medium, high, max"
+
+    # Validate context field if present
+    context = frontmatter.get('context')
+    if context is not None and context != 'fork':
+        return False, f"Invalid context value '{context}'. Only 'fork' is supported"
 
     return True, "Skill is valid!"
 

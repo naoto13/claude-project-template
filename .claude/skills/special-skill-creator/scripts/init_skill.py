@@ -17,7 +17,11 @@ from pathlib import Path
 
 SKILL_TEMPLATE = """---
 name: {skill_name}
-description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]
+description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it. Always write in third person.]
+# disable-model-invocation: true  # Uncomment if this skill should only be invoked manually via /name
+# argument-hint: [args]  # Uncomment and customize if this skill accepts arguments
+# context: fork  # Uncomment to run in a subagent context
+# agent: Explore  # Uncomment to specify subagent type (Explore, Plan, general-purpose, or custom)
 ---
 
 # {skill_title}
@@ -276,7 +280,8 @@ def main():
         print("\nSkill name requirements:")
         print("  - Hyphen-case identifier (e.g., 'data-analyzer')")
         print("  - Lowercase letters, digits, and hyphens only")
-        print("  - Max 40 characters")
+        print("  - Max 64 characters")
+        print("  - Cannot contain reserved words: 'anthropic', 'claude'")
         print("  - Must match directory name exactly")
         print("\nExamples:")
         print("  init_skill.py my-new-skill --path skills/public")
