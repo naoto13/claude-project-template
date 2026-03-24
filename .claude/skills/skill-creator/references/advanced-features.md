@@ -23,6 +23,14 @@
 | `context` | 任意 | `fork` でサブエージェントコンテキストで実行 |
 | `agent` | 任意 | `context: fork` 時のサブエージェントタイプ（`Explore`, `Plan`, `general-purpose` 等） |
 | `hooks` | 任意 | スキルライフサイクルにスコープされたフック |
+| `memory` | 任意 | `context: fork` 時の永続メモリスコープ: `user`（全プロジェクト共通）/ `project`（VCS共有可）/ `local`（VCS除外） |
+| `background` | 任意 | `true` で常にバックグラウンド実行。デフォルト: `false` |
+| `isolation` | 任意 | `worktree` で独立した git worktree 上で実行 |
+| `maxTurns` | 任意 | サブエージェントのターン数上限 |
+| `permissionMode` | 任意 | `default` / `acceptEdits` / `dontAsk` / `bypassPermissions` / `plan` |
+| `skills` | 任意 | 起動時にインジェクトするスキル一覧 |
+| `mcpServers` | 任意 | サブエージェント専用の MCP サーバー定義 |
+| `disallowedTools` | 任意 | 拒否ツールのブラックリスト（`allowed-tools` と併用可） |
 
 ### 命名規約
 
