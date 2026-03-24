@@ -1,6 +1,6 @@
 ---
 name: special-ui-ux-pro-max
-description: UI/UXデザインインテリジェンス。67スタイル、96パレット、57フォントペアリング、25チャート、13スタック（React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui）。アクション：計画、構築、作成、デザイン、実装、レビュー、修正、改善、最適化、強化、リファクタリング、UI/UXコードチェック。対象：ウェブサイト、LP、ダッシュボード、管理画面、EC、SaaS、ポートフォリオ、ブログ、モバイルアプリ。要素：ボタン、モーダル、ナビバー、サイドバー、カード、テーブル、フォーム、チャート。スタイル：glassmorphism、claymorphism、minimalism、brutalism、neumorphism、bento grid、ダークモード、レスポンシブ等。shadcn/ui MCP連携対応。
+description: 既存UIの改善・レビュー・最適化を行うデザインインテリジェンス。「UIを改善して」「デザインを直して」「見た目がダサい」「UIレビューして」「コンポーネントを洗練させて」「レスポンシブ対応して」「ダークモード追加」「アクセシビリティ改善」「shadcn/uiで作り直して」など既存画面の品質向上に使用する。13スタック対応（React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui等）。ゼロからの新規UI構築はspecial-frontend-designを参照。
 ---
 # UI/UX Pro Max - デザインインテリジェンス
 
