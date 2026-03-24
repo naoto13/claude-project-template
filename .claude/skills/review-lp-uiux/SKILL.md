@@ -407,6 +407,7 @@ public/**                         — 静的アセット
 **法的**: 利用規約 / プライバシーポリシー / 特定商取引法 / Cookie同意
 **ユーザーガイド**: 使い方ガイド（ヘルプページ・オンボーディング・ドキュメント等）が存在すること — 全アプリ必須
 **決済・領収書**: 支払いが発生するアプリの場合、領収書発行機能が存在すること — Stripe/Crypto 等の決済手段に対応した領収書 or 明細表示を確認
+**アプリ内ブラウザ対策**: LINE / Twitter(X) / Facebook / Instagram 等のアプリ内ブラウザからアクセスした場合にデフォルトブラウザへ遷移する仕組みがあること
 **技術**: TypeScriptエラーなし / ビルド通る / テストパス
 （可能な項目は実際にコマンド実行して検証する: `npm run check`, `npm test`）
 
@@ -433,6 +434,18 @@ public/**                         — 静的アセット
 5. プライバシーポリシーへのリンクがバナー内に含まれているか確認
 6. Cookie を一切使用していない場合は「該当なし」として ✅ 扱い。ただし `document.cookie`, `localStorage`, `ga(`, `gtag(`, `analytics` を Grep して本当に不使用か確認する
 7. Cookie/トラッキングを使用しているのに同意バナーがなければ ❌
+
+**アプリ内ブラウザ対策検査方法**:
+1. OAuth 認証を使用するページ（LP のログインボタン等）を特定
+2. `inAppBrowser`, `in-app`, `openExternalBrowser`, `intent://`, `detectInApp` を全ファイルで Grep
+3. アプリ内ブラウザ検出ロジックが存在するか確認（LINE / Facebook / Twitter(X) / Instagram / WeChat / 汎用 WebView）
+4. 検出時のリダイレクト処理を確認:
+   - LINE: `openExternalBrowser=1` パラメータ付加
+   - Android: `intent://` URL でデフォルトブラウザ遷移
+   - iOS: バナー案内（Safari / Chrome で開くよう誘導）
+5. フォールバック UI（バナー/案内表示）が存在するか確認
+6. OAuth 認証を使用しないアプリの場合は「該当なし」として ✅ 扱い
+7. OAuth を使用しているのにアプリ内ブラウザ対策がなければ ❌
 
 **領収書検査方法**:
 1. 決済機能の有無を確認: `stripe`, `crypto`, `payment`, `billing`, `checkout` を Grep
