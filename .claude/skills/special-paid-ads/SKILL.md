@@ -1,6 +1,6 @@
 ---
 name: special-paid-ads
-description: Google Ads、Meta（Facebook/Instagram）、LinkedIn、Twitter/X等での有料広告キャンペーンを支援する場合に使用する。「PPC」「paid media」「ROAS」「CPA」「ad campaign」「retargeting」「audience targeting」「Google Ads」「Facebook ads」「LinkedIn ads」「ad budget」「cost per click」「ad spend」「should I run ads」などに対応。キャンペーン戦略、オーディエンスターゲティング、入札、最適化に使用。広告クリエイティブの大量生成はad-creative、ランディングページ最適化はpage-croを参照。
+description: Google Ads、Meta（Facebook/Instagram）、LinkedIn、Twitter/X等での有料広告キャンペーンを支援する場合に使用する。「PPC」「paid media」「ROAS」「CPA」「ad campaign」「retargeting」「audience targeting」「Google Ads」「Facebook ads」「LinkedIn ads」「ad budget」「cost per click」「ad spend」「should I run ads」「広告を出したい」「広告運用」「リスティング広告」「広告費の使い方」などに対応。キャンペーン戦略、オーディエンスターゲティング、入札、最適化に使用。広告クリエイティブの大量生成はad-creative、ランディングページ最適化はpage-croを参照。
 metadata:
   version: 1.1.0
 ---

@@ -1,6 +1,6 @@
 ---
 name: special-product-marketing-context
-description: プロダクトマーケティングコンテキストドキュメントを作成・更新したい場合に使用する。「product context」「marketing context」「set up context」「positioning」「who is my target audience」「describe my product」「ICP」「ideal customer profile」などに対応。マーケティングタスク間で基本情報の繰り返しを避けたい場合にも使用。新プロジェクト開始時に他のマーケティングスキルの前に使用する — `.agents/product-marketing-context.md`を作成し、全スキルがプロダクト・オーディエンス・ポジショニング情報を参照する。
+description: マーケティング作業の初回セットアップ用。プロダクト情報・ターゲット・ポジショニングを一度まとめ、他のマーケティングスキルが繰り返し参照できるコンテキストドキュメントを作成・更新する。「product context」「marketing context」「set up context」「positioning」「who is my target audience」「describe my product」「ICP」「ideal customer profile」などに対応。マーケティングタスク間で基本情報の繰り返しを避けたい場合にも使用。新プロジェクト開始時に他のマーケティングスキルの前に使用する — `.agents/product-marketing-context.md`を作成し、全スキルがプロダクト・オーディエンス・ポジショニング情報を参照する。
 metadata:
   version: 1.1.0
 ---

@@ -1,6 +1,6 @@
 ---
 name: special-form-cro
-description: サインアップ/登録以外のフォーム（リード獲得、問い合わせ、デモ申込、アンケート、チェックアウトフォーム等）を最適化したい場合に使用する。「form optimization」「lead form conversions」「form friction」「form fields」「form completion rate」「contact form」「nobody fills out our form」「form abandonment」「too many fields」「demo request form」「lead form isn't converting」などに対応。サインアップ/登録フォームはsignup-flow-cro、フォーム付きポップアップはpopup-croを参照。
+description: サインアップ/登録以外のフォーム（リード獲得、問い合わせ、デモ申込、アンケート、チェックアウトフォーム等）を最適化したい場合に使用する。「form optimization」「lead form conversions」「form friction」「form fields」「form completion rate」「contact form」「nobody fills out our form」「form abandonment」「too many fields」「demo request form」「lead form isn't converting」「フォーム改善」「入力完了率が低い」「問い合わせが来ない」などに対応。サインアップ/登録フォームはsignup-flow-cro、フォーム付きポップアップはpopup-croを参照。
 metadata:
   version: 1.1.0
 ---

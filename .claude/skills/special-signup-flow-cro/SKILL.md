@@ -1,6 +1,6 @@
 ---
 name: special-signup-flow-cro
-description: サインアップ、登録、アカウント作成、トライアルアクティベーションフローを最適化したい場合に使用する。「signup conversions」「registration friction」「signup form optimization」「free trial signup」「reduce signup dropoff」「account creation flow」「people aren't signing up」「signup abandonment」「trial conversion rate」「nobody completes registration」「too many steps to sign up」「simplify our signup」などに対応。サインアップ後のオンボーディングはonboarding-cro、リード獲得フォーム（アカウント作成以外）はform-croを参照。
+description: サインアップ、登録、アカウント作成、トライアルアクティベーションフローを最適化したい場合に使用する。「signup conversions」「registration friction」「signup form optimization」「free trial signup」「reduce signup dropoff」「account creation flow」「people aren't signing up」「signup abandonment」「trial conversion rate」「nobody completes registration」「too many steps to sign up」「simplify our signup」「登録率改善」「会員登録の離脱が多い」「サインアップ完了率」などに対応。サインアップ後のオンボーディングはonboarding-cro、リード獲得フォーム（アカウント作成以外）はform-croを参照。
 metadata:
   version: 1.1.0
 ---

@@ -1,6 +1,6 @@
 ---
 name: special-ai-seo
-description: AI検索エンジン向けのコンテンツ最適化、LLMからの引用獲得、AI生成回答への表示を目指す場合に使用する。「AI SEO」「AEO」「GEO」「LLMO」「answer engine optimization」「generative engine optimization」「LLM optimization」「AI Overviews」「optimize for ChatGPT」「optimize for Perplexity」「AI citations」「AI visibility」「zero-click search」「how do I show up in AI answers」「LLM mentions」「optimize for Claude/Gemini」などに対応。AIアシスタントやAI検索エンジンにコンテンツを引用・表示させたい場合に使用。従来のテクニカル・オンページSEO監査はseo-audit、構造化データの実装はschema-markupを参照。
+description: AI検索エンジン向けのコンテンツ最適化、LLMからの引用獲得、AI生成回答への表示を目指す場合に使用する。「AI SEO」「AEO」「GEO」「LLMO」「answer engine optimization」「generative engine optimization」「LLM optimization」「AI Overviews」「optimize for ChatGPT」「optimize for Perplexity」「AI citations」「AI visibility」「zero-click search」「how do I show up in AI answers」「LLM mentions」「optimize for Claude/Gemini」「AIに引用されたい」「AI検索に表示されたい」「ChatGPTで紹介される」などに対応。AIアシスタントやAI検索エンジンにコンテンツを引用・表示させたい場合に使用。従来のテクニカル・オンページSEO監査はseo-audit、構造化データの実装はschema-markupを参照。
 metadata:
   version: 1.1.0
 ---

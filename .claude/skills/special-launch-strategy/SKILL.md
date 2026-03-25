@@ -1,6 +1,6 @@
 ---
 name: special-launch-strategy
-description: プロダクトローンチ、機能発表、リリース戦略を計画したい場合に使用する。「launch」「Product Hunt」「feature release」「announcement」「go-to-market」「beta launch」「early access」「waitlist」「product update」「how do I launch this」「launch checklist」「GTM plan」「we're about to ship」などに対応。公開リリースの準備に使用。ローンチ後の継続的マーケティングはmarketing-ideasを参照。
+description: プロダクトローンチ、機能発表、リリース戦略を計画したい場合に使用する。「launch」「Product Hunt」「feature release」「announcement」「go-to-market」「beta launch」「early access」「waitlist」「product update」「how do I launch this」「launch checklist」「GTM plan」「we're about to ship」「リリース計画」「公開準備」「どうやってローンチする」などに対応。公開リリースの準備に使用。ローンチ後の継続的マーケティングはmarketing-ideasを参照。
 metadata:
   version: 1.1.0
 ---

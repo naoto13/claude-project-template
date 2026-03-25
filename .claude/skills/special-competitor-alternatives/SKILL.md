@@ -1,6 +1,6 @@
 ---
 name: special-competitor-alternatives
-description: SEOとセールスイネーブルメント向けの競合比較・代替製品ページを作成したい場合に使用する。「alternative page」「vs page」「competitor comparison」「comparison page」「[Product] vs [Product]」「[Product] alternative」「competitive landing pages」「how do we compare to X」「battle card」「competitor teardown」などに対応。4形式をカバー：単一代替、複数代替、自社vs競合、競合vs競合。セールス向け競合ドキュメントはsales-enablementを参照。
+description: SEOとセールスイネーブルメント向けの競合比較・代替製品ページを作成したい場合に使用する。「alternative page」「vs page」「competitor comparison」「comparison page」「[Product] vs [Product]」「[Product] alternative」「competitive landing pages」「how do we compare to X」「battle card」「competitor teardown」「競合比較ページ」「〇〇の代替」「vs ページを作りたい」などに対応。4形式をカバー：単一代替、複数代替、自社vs競合、競合vs競合。セールス向け競合ドキュメントはsales-enablementを参照。
 metadata:
   version: 1.1.0
 ---

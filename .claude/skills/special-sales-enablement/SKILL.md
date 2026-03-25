@@ -1,6 +1,6 @@
 ---
 name: special-sales-enablement
-description: "セールスコラテラル、ピッチデッキ、ワンページャー、オブジェクションハンドリングドキュメント、デモスクリプトを作成したい場合に使用する。「sales deck」「pitch deck」「one-pager」「leave-behind」「objection handling」「deal-specific ROI analysis」「demo script」「talk track」「sales playbook」「proposal template」「buyer persona card」「help my sales team」「sales materials」「what should I give my sales reps」などに対応。セールスチームが案件をクローズするのに役立つドキュメントやアセットすべてに使用。競合比較ページとバトルカードはcompetitor-alternatives、マーケティングウェブサイトのコピーはcopywriting、コールドアウトリーチメールはcold-emailを参照。"
+description: "セールスコラテラル、ピッチデッキ、ワンページャー、オブジェクションハンドリングドキュメント、デモスクリプトを作成したい場合に使用する。「sales deck」「pitch deck」「one-pager」「leave-behind」「objection handling」「deal-specific ROI analysis」「demo script」「talk track」「sales playbook」「proposal template」「buyer persona card」「help my sales team」「sales materials」「what should I give my sales reps」「営業資料」「提案書」「ピッチ資料」「反論への対応集」などに対応。セールスチームが案件をクローズするのに役立つドキュメントやアセットすべてに使用。競合比較ページとバトルカードはcompetitor-alternatives、マーケティングウェブサイトのコピーはcopywriting、コールドアウトリーチメールはcold-emailを参照。"
 metadata:
   version: 1.1.0
 ---

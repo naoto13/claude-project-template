@@ -1,6 +1,6 @@
 ---
 name: special-marketing-ideas
-description: SaaS/ソフトウェア製品のマーケティングアイデア、インスピレーション、戦略が必要な場合に使用する。「marketing ideas」「growth ideas」「how to market」「marketing strategies」「marketing tactics」「ways to promote」「ideas to grow」「what else can I try」「I don't know how to market this」「brainstorm marketing」「what marketing should I do」などに対応。成長の糸口を探している場合の出発点として使用。具体的なチャネル実行は各スキル（paid-ads、social-content、email-sequence等）を参照。
+description: SaaS/ソフトウェア製品のマーケティングアイデア、インスピレーション、戦略が必要な場合に使用する。「marketing ideas」「growth ideas」「how to market」「marketing strategies」「marketing tactics」「ways to promote」「ideas to grow」「what else can I try」「I don't know how to market this」「brainstorm marketing」「what marketing should I do」「集客アイデア」「どう広める」「マーケティング施策が思いつかない」などに対応。成長の糸口を探している場合の出発点として使用。具体的なチャネル実行は各スキル（paid-ads、social-content、email-sequence等）を参照。
 metadata:
   version: 1.1.0
 ---

@@ -1,6 +1,6 @@
 ---
 name: special-churn-prevention
-description: 解約率の低減、キャンセルフロー構築、引き止めオファー設定、決済失敗の回収、リテンション戦略の実装を行いたい場合に使用する。「churn」「cancel flow」「offboarding」「save offer」「dunning」「failed payment recovery」「win-back」「retention」「exit survey」「pause subscription」「involuntary churn」「people keep canceling」「churn rate is too high」「how do I keep users」「customers are leaving」などに対応。解約防止システム構築に使用。キャンセル後のウィンバックメールはemail-sequence、アプリ内アップグレードペイウォールはpaywall-upgrade-croを参照。
+description: 解約率の低減、キャンセルフロー構築、引き止めオファー設定、決済失敗の回収、リテンション戦略の実装を行いたい場合に使用する。「churn」「cancel flow」「offboarding」「save offer」「dunning」「failed payment recovery」「win-back」「retention」「exit survey」「pause subscription」「involuntary churn」「people keep canceling」「churn rate is too high」「how do I keep users」「customers are leaving」「解約を減らしたい」「退会防止」「ユーザーが離れる」などに対応。解約防止システム構築に使用。キャンセル後のウィンバックメールはemail-sequence、アプリ内アップグレードペイウォールはpaywall-upgrade-croを参照。
 metadata:
   version: 1.1.0
 ---

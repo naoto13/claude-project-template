@@ -1,6 +1,6 @@
 ---
 name: special-cold-email
-description: 返信を獲得するB2Bコールドメールとフォローアップシーケンスを作成する。「cold outreach」「prospecting email」「outbound email」「email to leads」「reach out to prospects」「sales email」「follow-up email sequence」「nobody's replying to my emails」「how do I write a cold email」などに対応。件名、オープニング、本文、CTA、パーソナライズ、マルチタッチのフォローアップをカバー。ウォーム/ライフサイクルメールはemail-sequence、メール以外のセールス資料はsales-enablementを参照。
+description: 返信を獲得するB2Bコールドメールとフォローアップシーケンスを作成する。「cold outreach」「prospecting email」「outbound email」「email to leads」「reach out to prospects」「sales email」「follow-up email sequence」「nobody's replying to my emails」「how do I write a cold email」「営業メールを書いて」「新規開拓メール」「返信が来ない」などに対応。件名、オープニング、本文、CTA、パーソナライズ、マルチタッチのフォローアップをカバー。ウォーム/ライフサイクルメールはemail-sequence、メール以外のセールス資料はsales-enablementを参照。
 metadata:
   version: 1.1.0
 ---

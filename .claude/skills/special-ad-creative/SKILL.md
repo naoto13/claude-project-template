@@ -1,6 +1,6 @@
 ---
 name: special-ad-creative
-description: 広告クリエイティブ（見出し・説明文・本文・バリエーション）の生成・反復・大量制作を行いたい場合に使用する。「ad copy variations」「ad creative」「generate headlines」「RSA headlines」「bulk ad copy」「ad iterations」「creative testing」「ad performance optimization」「write me some ads」「Facebook ad copy」「Google ad headlines」「LinkedIn ad text」「I need more ad variations」などに対応。広告コピーの大量生成や既存広告の反復改善に使用。キャンペーン戦略とターゲティングはpaid-ads、ランディングページのコピーはcopywritingを参照。
+description: 広告クリエイティブ（見出し・説明文・本文・バリエーション）の生成・反復・大量制作を行いたい場合に使用する。「ad copy variations」「ad creative」「generate headlines」「RSA headlines」「bulk ad copy」「ad iterations」「creative testing」「ad performance optimization」「write me some ads」「Facebook ad copy」「Google ad headlines」「LinkedIn ad text」「I need more ad variations」「広告文を作って」「キャッチコピー量産」「見出し案」「バリエーション作成」などに対応。広告コピーの大量生成や既存広告の反復改善に使用。キャンペーン戦略とターゲティングはpaid-ads、ランディングページのコピーはcopywritingを参照。
 metadata:
   version: 1.1.0
 ---

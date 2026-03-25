@@ -1,6 +1,6 @@
 ---
 name: special-programmatic-seo
-description: テンプレートとデータを使って大量のSEO向けページを作成したい場合に使用する。「programmatic SEO」「pSEO」「template pages」「pages at scale」「directory pages」「location pages」「[keyword] + [city] pages」「comparison pages」「integration pages」「building many pages for SEO」「generate 100 pages」「data-driven pages」「templated landing pages」などに対応。異なるキーワードや地域をターゲットにした類似ページを多数作成したい場合に使用。既存SEO課題の監査はseo-audit、コンテンツ戦略立案はcontent-strategyを参照。
+description: テンプレートとデータを使って大量のSEO向けページを作成したい場合に使用する。「programmatic SEO」「pSEO」「template pages」「pages at scale」「directory pages」「location pages」「[keyword] + [city] pages」「comparison pages」「integration pages」「building many pages for SEO」「generate 100 pages」「data-driven pages」「templated landing pages」「大量ページ作成」「地域ページ量産」「テンプレートページ」などに対応。異なるキーワードや地域をターゲットにした類似ページを多数作成したい場合に使用。既存SEO課題の監査はseo-audit、コンテンツ戦略立案はcontent-strategyを参照。
 metadata:
   version: 1.1.0
 ---

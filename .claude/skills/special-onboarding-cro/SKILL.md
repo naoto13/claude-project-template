@@ -1,6 +1,6 @@
 ---
 name: special-onboarding-cro
-description: サインアップ後のオンボーディング、ユーザーアクティベーション、初回体験、Time-to-Valueを最適化したい場合に使用する。「onboarding flow」「activation rate」「user activation」「first-run experience」「empty states」「onboarding checklist」「aha moment」「new user experience」「users aren't activating」「nobody completes setup」「low activation rate」「users sign up but don't use the product」「time to value」「first session experience」などに対応。サインアップ/登録の最適化はsignup-flow-cro、継続的メールシーケンスはemail-sequenceを参照。
+description: サインアップ後のオンボーディング、ユーザーアクティベーション、初回体験、Time-to-Valueを最適化したい場合に使用する。「onboarding flow」「activation rate」「user activation」「first-run experience」「empty states」「onboarding checklist」「aha moment」「new user experience」「users aren't activating」「nobody completes setup」「low activation rate」「users sign up but don't use the product」「time to value」「first session experience」「新規ユーザーが定着しない」「初回体験改善」「定着率を上げたい」などに対応。サインアップ/登録の最適化はsignup-flow-cro、継続的メールシーケンスはemail-sequenceを参照。
 metadata:
   version: 1.1.0
 ---

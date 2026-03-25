@@ -1,6 +1,6 @@
 ---
 name: special-marketing-psychology
-description: 心理学的原則、メンタルモデル、行動科学をマーケティングに適用したい場合に使用する。「psychology」「mental models」「cognitive bias」「persuasion」「behavioral science」「why people buy」「decision-making」「consumer behavior」「anchoring」「social proof」「scarcity」「loss aversion」「framing」「nudge」などに対応。マーケティング文脈で人々の思考や意思決定を理解・活用したい場合に使用。
+description: 心理学的原則、メンタルモデル、行動科学をマーケティングに適用したい場合に使用する。「psychology」「mental models」「cognitive bias」「persuasion」「behavioral science」「why people buy」「decision-making」「consumer behavior」「anchoring」「social proof」「scarcity」「loss aversion」「framing」「nudge」「購買心理」「行動経済学」「なぜ買ってもらえない」などに対応。マーケティング文脈で人々の思考や意思決定を理解・活用したい場合に使用。
 metadata:
   version: 1.1.0
 ---

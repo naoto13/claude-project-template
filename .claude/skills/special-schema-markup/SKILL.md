@@ -1,6 +1,6 @@
 ---
 name: special-schema-markup
-description: サイトにスキーママークアップと構造化データを追加・修正・最適化したい場合に使用する。「schema markup」「structured data」「JSON-LD」「rich snippets」「schema.org」「FAQ schema」「product schema」「review schema」「breadcrumb schema」「Google rich results」「knowledge panel」「star ratings in search」「add structured data」などに対応。Googleで拡張結果を表示させたい場合に使用。より広いSEO課題はseo-audit、AI検索の最適化はai-seoを参照。
+description: サイトにスキーママークアップと構造化データを追加・修正・最適化したい場合に使用する。「schema markup」「structured data」「JSON-LD」「rich snippets」「schema.org」「FAQ schema」「product schema」「review schema」「breadcrumb schema」「Google rich results」「knowledge panel」「star ratings in search」「add structured data」「構造化データを追加したい」「リッチスニペット」「検索結果に星を表示」などに対応。Googleで拡張結果を表示させたい場合に使用。より広いSEO課題はseo-audit、AI検索の最適化はai-seoを参照。
 metadata:
   version: 1.1.0
 ---

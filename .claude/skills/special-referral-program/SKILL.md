@@ -1,6 +1,6 @@
 ---
 name: special-referral-program
-description: "紹介プログラム、アフィリエイトプログラム、またはクチコミ戦略を作成・最適化・分析したい場合に使用する。「referral」「affiliate」「ambassador」「word of mouth」「viral loop」「refer a friend」「partner program」「referral incentive」「how to get referrals」「customers referring customers」「affiliate payout」などに対応。既存ユーザーやパートナーが新規顧客を連れてくる仕組みを作りたい場合に使用。ローンチ時のバイラル施策についてはlaunch-strategyを参照。"
+description: "紹介プログラム、アフィリエイトプログラム、またはクチコミ戦略を作成・最適化・分析したい場合に使用する。「referral」「affiliate」「ambassador」「word of mouth」「viral loop」「refer a friend」「partner program」「referral incentive」「how to get referrals」「customers referring customers」「affiliate payout」「紹介制度を作りたい」「友達招待」「口コミ施策」などに対応。既存ユーザーやパートナーが新規顧客を連れてくる仕組みを作りたい場合に使用。ローンチ時のバイラル施策についてはlaunch-strategyを参照。"
 metadata:
   version: 1.1.0
 ---

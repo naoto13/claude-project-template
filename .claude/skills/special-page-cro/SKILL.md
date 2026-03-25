@@ -1,6 +1,6 @@
 ---
 name: special-page-cro
-description: ホームページ・ランディングページ・料金ページ・機能ページ・ブログ記事など、あらゆるマーケティングページのコンバージョン最適化を行いたい場合に使用する。「CRO」「conversion rate optimization」「this page isn't converting」「improve conversions」「why isn't this page working」「my landing page sucks」「nobody's converting」「low conversion rate」「bounce rate is too high」「people leave without signing up」「this page needs work」などに対応。URLを共有してフィードバックを求められた場合も対象。サインアップフローはsignup-flow-cro、アクティベーションはonboarding-cro、フォームはform-cro、ポップアップはpopup-croを参照。
+description: ホームページ・ランディングページ・料金ページ・機能ページ・ブログ記事など、あらゆるマーケティングページのコンバージョン最適化を行いたい場合に使用する。「CRO」「conversion rate optimization」「this page isn't converting」「improve conversions」「why isn't this page working」「my landing page sucks」「nobody's converting」「low conversion rate」「bounce rate is too high」「people leave without signing up」「this page needs work」「CV率が低い」「LP改善」「離脱が多い」「コンバージョンが上がらない」などに対応。URLを共有してフィードバックを求められた場合も対象。サインアップフローはsignup-flow-cro、アクティベーションはonboarding-cro、フォームはform-cro、ポップアップはpopup-croを参照。
 metadata:
   version: 1.1.0
 ---

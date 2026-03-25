@@ -1,6 +1,6 @@
 ---
 name: special-site-architecture
-description: ウェブサイトのページ階層、ナビゲーション、URL構造、内部リンクの計画・マッピング・再構築を行いたい場合に使用する。「sitemap」「site map」「visual sitemap」「site structure」「page hierarchy」「information architecture」「IA」「navigation design」「URL structure」「breadcrumbs」「internal linking strategy」「website planning」「what pages do I need」「how should I organize my site」「site navigation」などに対応。XMLサイトマップはテクニカルSEO（seo-audit参照）。SEO監査はseo-audit、構造化データはschema-markupを参照。
+description: ウェブサイトのページ階層、ナビゲーション、URL構造、内部リンクの計画・マッピング・再構築を行いたい場合に使用する。「sitemap」「site map」「visual sitemap」「site structure」「page hierarchy」「information architecture」「IA」「navigation design」「URL structure」「breadcrumbs」「internal linking strategy」「website planning」「what pages do I need」「how should I organize my site」「site navigation」「サイト構成を考えたい」「ページ設計」「ナビゲーション設計」などに対応。XMLサイトマップはテクニカルSEO（seo-audit参照）。SEO監査はseo-audit、構造化データはschema-markupを参照。
 metadata:
   version: 1.1.0
 ---

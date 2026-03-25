@@ -1,6 +1,6 @@
 ---
 name: special-revops
-description: "レベニューオペレーション、リードライフサイクル管理、またはマーケティングからセールスへの引き継ぎプロセスに関するサポートが必要な場合に使用する。「RevOps」「revenue operations」「lead scoring」「lead routing」「MQL」「SQL」「pipeline stages」「deal desk」「CRM automation」「marketing-to-sales handoff」「data hygiene」「leads aren't getting to sales」「pipeline management」「lead qualification」「when should marketing hand off to sales」などに対応。マーケティングと収益をつなぐシステムとプロセスに関することすべてに使用。コールドアウトリーチメールはcold-email、メールドリップキャンペーンはemail-sequence、価格決定はpricing-strategyを参照。"
+description: "マーケと営業の連携（RevOps）を整備し、リードが確実に商談・受注につながる仕組みを作る。レベニューオペレーション、リードライフサイクル管理、またはマーケティングからセールスへの引き継ぎプロセスに関するサポートが必要な場合に使用する。「RevOps」「revenue operations」「lead scoring」「lead routing」「MQL」「SQL」「pipeline stages」「deal desk」「CRM automation」「marketing-to-sales handoff」「data hygiene」「leads aren't getting to sales」「pipeline management」「lead qualification」「when should marketing hand off to sales」などに対応。マーケティングと収益をつなぐシステムとプロセスに関することすべてに使用。コールドアウトリーチメールはcold-email、メールドリップキャンペーンはemail-sequence、価格決定はpricing-strategyを参照。"
 metadata:
   version: 1.1.0
 ---

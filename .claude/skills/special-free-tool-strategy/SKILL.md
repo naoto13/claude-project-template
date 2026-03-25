@@ -1,6 +1,6 @@
 ---
 name: special-free-tool-strategy
-description: マーケティング目的（リード獲得、SEO価値、ブランド認知）の無料ツールを企画・評価・構築したい場合に使用する。「engineering as marketing」「free tool」「marketing tool」「calculator」「generator」「interactive tool」「lead gen tool」「build a tool for leads」「free resource」「ROI calculator」「grader tool」「audit tool」「should I build a free tool」「tools for lead gen」などに対応。リードやリンク獲得のための有用なツールを無料提供したい場合に使用。コンテンツベースのリード獲得はcontent-strategyを参照。
+description: マーケティング目的（リード獲得、SEO価値、ブランド認知）の無料ツールを企画・評価・構築したい場合に使用する。「engineering as marketing」「free tool」「marketing tool」「calculator」「generator」「interactive tool」「lead gen tool」「build a tool for leads」「free resource」「ROI calculator」「grader tool」「audit tool」「should I build a free tool」「tools for lead gen」「無料ツールでリード獲得」「計算ツールを作りたい」「マーケティング用ツール」などに対応。リードやリンク獲得のための有用なツールを無料提供したい場合に使用。コンテンツベースのリード獲得はcontent-strategyを参照。
 metadata:
   version: 1.1.0
 ---

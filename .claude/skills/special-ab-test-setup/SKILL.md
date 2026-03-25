@@ -1,6 +1,6 @@
 ---
 name: special-ab-test-setup
-description: A/Bテストや実験の計画・設計・実装を行いたい場合に使用する。「A/B test」「split test」「experiment」「test this change」「variant copy」「multivariate test」「hypothesis」「should I test this」「which version is better」「test two versions」「statistical significance」「how long should I run this test」などに対応。2つのアプローチを比較して効果を測定したい場合に使用。トラッキング実装はanalytics-tracking、ページレベルのコンバージョン最適化はpage-croを参照。
+description: A/Bテストや実験の計画・設計・実装を行いたい場合に使用する。「A/B test」「split test」「experiment」「test this change」「variant copy」「multivariate test」「hypothesis」「should I test this」「which version is better」「test two versions」「statistical significance」「how long should I run this test」「どっちが効果的か比較」「テストしたい」「効果測定」などに対応。2つのアプローチを比較して効果を測定したい場合に使用。トラッキング実装はanalytics-tracking、ページレベルのコンバージョン最適化はpage-croを参照。
 metadata:
   version: 1.1.0
 ---

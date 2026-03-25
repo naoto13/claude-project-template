@@ -1,6 +1,6 @@
 ---
 name: special-paywall-upgrade-cro
-description: アプリ内ペイウォール、アップグレード画面、アップセルモーダル、機能ゲートの作成・最適化を行いたい場合に使用する。「paywall」「upgrade screen」「upgrade modal」「upsell」「feature gate」「convert free to paid」「freemium conversion」「trial expiration screen」「limit reached screen」「plan upgrade prompt」「in-app pricing」「free users won't upgrade」「trial to paid conversion」「how do I get users to pay」などに対応。公開料金ページ（page-cro参照）とは異なり、ユーザーが既に価値を体験したプロダクト内のアップグレード場面に焦点。価格決定はpricing-strategyを参照。
+description: アプリ内ペイウォール、アップグレード画面、アップセルモーダル、機能ゲートの作成・最適化を行いたい場合に使用する。「paywall」「upgrade screen」「upgrade modal」「upsell」「feature gate」「convert free to paid」「freemium conversion」「trial expiration screen」「limit reached screen」「plan upgrade prompt」「in-app pricing」「free users won't upgrade」「trial to paid conversion」「how do I get users to pay」「有料プランに誘導」「課金を促したい」「フリーユーザーが課金しない」などに対応。公開料金ページ（page-cro参照）とは異なり、ユーザーが既に価値を体験したプロダクト内のアップグレード場面に焦点。価格決定はpricing-strategyを参照。
 metadata:
   version: 1.1.0
 ---

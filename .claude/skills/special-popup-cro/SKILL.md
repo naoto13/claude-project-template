@@ -1,6 +1,6 @@
 ---
 name: special-popup-cro
-description: コンバージョン目的のポップアップ、モーダル、オーバーレイ、スライドイン、バナーの作成・最適化を行いたい場合に使用する。「exit intent」「popup conversions」「modal optimization」「lead capture popup」「email popup」「announcement banner」「overlay」「collect emails with a popup」「exit popup」「scroll trigger」「sticky bar」「notification bar」などに対応。ポップアップ外のフォームはform-cro、ページ全体のコンバージョン最適化はpage-croを参照。
+description: コンバージョン目的のポップアップ、モーダル、オーバーレイ、スライドイン、バナーの作成・最適化を行いたい場合に使用する。「exit intent」「popup conversions」「modal optimization」「lead capture popup」「email popup」「announcement banner」「overlay」「collect emails with a popup」「exit popup」「scroll trigger」「sticky bar」「notification bar」「ポップアップを作りたい」「メール登録を促進」「出口ポップアップ」などに対応。ポップアップ外のフォームはform-cro、ページ全体のコンバージョン最適化はpage-croを参照。
 metadata:
   version: 1.1.0
 ---
