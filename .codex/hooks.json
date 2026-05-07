@@ -1,0 +1,82 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Write|Edit|Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/ny/work/00_T2web3/98_claude-project-template/.codex/hooks/guard-secrets.sh'"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/ny/work/00_T2web3/98_claude-project-template/.codex/hooks/guard-npm-install.sh'",
+            "timeout": 15000
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/ny/work/00_T2web3/98_claude-project-template/.codex/hooks/guard-linter-config.sh'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/ny/work/00_T2web3/98_claude-project-template/.codex/hooks/scan-output-secrets.sh'"
+          },
+          {
+            "type": "command",
+            "command": "'/Users/ny/work/00_T2web3/98_claude-project-template/.codex/hooks/audit-after-install.sh'",
+            "timeout": 30000
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/ny/work/00_T2web3/98_claude-project-template/.codex/hooks/post-lint-format.sh'",
+            "timeout": 30000
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/ny/work/00_T2web3/98_claude-project-template/.codex/hooks/session-start-mysql.sh'",
+            "timeout": 120000
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/ny/work/00_T2web3/98_claude-project-template/.codex/hooks/stop-ci.sh'",
+            "timeout": 30000
+          }
+        ]
+      }
+    ]
+  }
+}
