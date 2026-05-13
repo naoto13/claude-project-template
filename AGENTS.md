@@ -56,4 +56,5 @@ pnpm lint:fix     # リント自動修正
 - 完了報告前に、存在するテスト・型チェック・ビルドを実行する
 - 秘密情報はハードコードしない
 - 判断を求める時は、案ごとのメリット・デメリットを明示して要約する
-- Claude セッションで実装・デバッグ・調査・リファクタ・レビューを行う場合は、原則 Codex に委任する（詳細: `.claude/rules/prefer-codex-subagent.md`）。OMC プラグインが利用可能なら `codex:codex-rescue` サブエージェント、なければ `codex exec` 直叩き、Codex が使えないなら `.claude/agents/` の 4 ロール（orchestrator/product-owner/senior-engineer/api-reviewer）にフォールバックする
+- Claude セッションのコード作業（実装・デバッグ・調査・リファクタ・レビュー）は **原則 Codex に委任** して Anthropic Token を節約する。詳細: `.claude/rules/prefer-codex-subagent.md`
+- 委任先の優先順: `codex:codex-rescue`（OMC プラグイン）→ `codex exec` 直叩き → `.claude/agents/` の 4 ロール（orchestrator / product-owner / senior-engineer / api-reviewer）
