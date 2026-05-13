@@ -12,6 +12,7 @@
 | 次のタスクを探す | `todo.md` | `docs/domain/phase-roadmap.md` |
 | ローカル開発 | `docs/local-dev.md` | `package.json` |
 | ドメイン理解 | `docs/domain/business-model.md` | `docs/domain/data-model.md` |
+| エージェント運用 | `docs/agent-delegation.md` | `.claude/rules/prefer-codex-subagent.md` |
 
 ## リポジトリ構成
 
@@ -56,5 +57,5 @@ pnpm lint:fix     # リント自動修正
 - 完了報告前に、存在するテスト・型チェック・ビルドを実行する
 - 秘密情報はハードコードしない
 - 判断を求める時は、案ごとのメリット・デメリットを明示して要約する
-- Claude セッションのコード作業（実装・デバッグ・調査・リファクタ・レビュー）は **原則 Codex に委任** して Anthropic Token を節約する。詳細: `.claude/rules/prefer-codex-subagent.md`
+- Claude セッションのコード作業（実装・デバッグ・調査・リファクタ・レビュー）は **原則 Codex に委任** して Anthropic Token を節約する。ルール: `.claude/rules/prefer-codex-subagent.md` / 背景と設計ノート: `docs/agent-delegation.md`
 - 委任先の優先順: `codex:codex-rescue`（`openai-codex` プラグイン提供）→ `codex exec` 直叩き → `.claude/agents/` の 4 ロール（orchestrator / product-owner / senior-engineer / api-reviewer）
