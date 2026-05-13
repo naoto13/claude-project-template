@@ -57,4 +57,4 @@ pnpm lint:fix     # リント自動修正
 - 秘密情報はハードコードしない
 - 判断を求める時は、案ごとのメリット・デメリットを明示して要約する
 - Claude セッションのコード作業（実装・デバッグ・調査・リファクタ・レビュー）は **原則 Codex に委任** して Anthropic Token を節約する。詳細: `.claude/rules/prefer-codex-subagent.md`
-- 委任先の優先順: `codex:codex-rescue`（OMC プラグイン）→ `codex exec` 直叩き → `.claude/agents/` の 4 ロール（orchestrator / product-owner / senior-engineer / api-reviewer）
+- 委任先の優先順: `codex:codex-rescue`（`openai-codex` プラグイン提供）→ `codex exec` 直叩き → `.claude/agents/` の 4 ロール（orchestrator / product-owner / senior-engineer / api-reviewer）

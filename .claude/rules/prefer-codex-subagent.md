@@ -25,8 +25,8 @@ alwaysApply: true
 
 | 環境条件 | デフォルト |
 |---|---|
-| **OMC プラグイン（`codex:codex-rescue`）が利用可能** | パス A を優先 |
-| **OMC プラグインなし、Codex CLI のみあり** | パス B を優先 |
+| **`openai-codex` プラグイン（`codex:codex-rescue` を提供）が利用可能** | パス A を優先 |
+| **プラグインなし、Codex CLI のみあり** | パス B を優先 |
 | **Codex 自体が使えない** | パス C にフォールバック |
 
 確認方法: `which codex` で CLI、Agent ツールで `codex:codex-rescue` が `subagent_type` として通るかで判定する。
@@ -35,26 +35,27 @@ alwaysApply: true
 
 ### A) `codex:codex-rescue` サブエージェント（**推奨・標準パス**）
 
-OMC プラグイン経由で Codex を呼ぶ。background ジョブ管理（`/codex:status` / `/codex:result` / `/codex:cancel`）が使えるため、多段階・長時間タスクでも安全。
+**`openai-codex` プラグイン** が提供する thin forwarding wrapper。`tools: Bash` のみで自分では推論せず、内部で `codex-companion.mjs task ...` を呼んで Codex CLI へ forward する。Token は forward 分のみ Claude、実処理は OpenAI 課金。
 
 ```
 Agent({
   subagent_type: "codex:codex-rescue",
   description: "<task summary>",
-  prompt: "--model gpt-5.5 --effort medium --write <Goal block + Task>"
+  prompt: "<routing flags> <Persona + Goal block + Task>"
 })
 ```
 
-**用途別引数（ユーザーの `~/.codex/config.toml` に対応プロファイルがある前提の汎用対応表）:**
+**routing flags（prompt 先頭に置く / wrapper が抜き取って Codex に渡す）:**
 
-| 用途 | 引数 |
-|---|---|
-| コードレビュー・差分監査 | `--model gpt-5.5 --effort medium`（read-only はプロンプトで明示） |
-| バグ調査・最小パッチ | `--model gpt-5.5 --effort medium --write` |
-| 実装・リファクタリング | `--model gpt-5.5 --effort medium --write` |
-| 設計判断あり（新規アーキ） | `--model gpt-5.5 --effort high --write` |
-| タイポ・1 行修正 | `--model spark --write` |
-| 長時間・多段階 | 上記 + `--background` |
+| フラグ | 動作 | デフォルト |
+|---|---|---|
+| `--write` | Codex が書き込み可能で実行 | **wrapper が自動付与（ON）**。read-only にしたいときは prompt 内に「read-only」「review only」「diagnose without edits」など意図を明示する — wrapper がそれを検知して `--write` を**付けない** |
+| `--background` / `--wait` | ジョブを background / foreground で実行 | 小タスクは foreground、複雑/長時間は background |
+| `--resume-last` / `--fresh` | 前回 Codex ジョブを継続 / 新規開始 | 新規開始 |
+| `--model <name>` | モデル指定（例: `gpt-5.3-codex-spark`） | 未指定（プラグインデフォルト） |
+| `--effort <low\|medium\|high>` | reasoning effort | 未指定（プラグインデフォルト） |
+
+**ジョブ管理**: `/codex:status`, `/codex:result`, `/codex:cancel` で外部制御可能。長時間タスクでも安全。
 
 ### B) `codex exec` 直叩き（ローカル sandbox / 1 回完結）
 
@@ -105,6 +106,30 @@ Agent({ subagent_type: "senior-engineer", description: "...", prompt: "..." })
 1. **宣言**: 委任前に「委任します（パス=`A|B|C` / ロール=`<name>`）: `<理由>`」を 1 行で明示
 2. **プロンプト**: 下記 **Goal ブロックを必須** とし、背景・制約（ファイルパス、行番号、既知の落とし穴）を self-contained で記述
 3. **結果統合**: 出力を親で確認し、最終検証・コミット判断は親が行う
+
+### ペルソナ埋め込み（`.claude/agents/<role>.md` を Codex に渡す）
+
+`.codex/agents/*.toml` を Codex CLI が読むかは未確認のため、ロール定義を Codex に渡したいときは **`.claude/agents/<role>.md` を Single Source of Truth とし、その本文（Role / Mission / Execution Protocol）を prompt 先頭に埋め込む** 運用にする。これで `.claude/agents/*.md` を更新するだけで Claude / Codex の両方に最新ロール定義が反映される。
+
+組み立て順: `routing flags` → `Persona` → `Goal block` → `Task`
+
+```
+<routing flags（例: --write --background）>
+
+# Persona
+
+<.claude/agents/senior-engineer.md の Role / Execution Protocol を抜粋>
+
+## Goal
+
+Complete <タスクの目的> without stopping until <検証可能な終了状態>.
+
+## Task
+
+<具体的なタスク内容>
+```
+
+`Agent({subagent_type: "codex:codex-rescue", prompt: <この本文>})` で渡せば、wrapper が routing flags を抜き取り、残りを Codex CLI に forward する。
 
 ### Goal ブロック（必須）
 
