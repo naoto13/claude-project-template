@@ -30,9 +30,9 @@ run_if_present() {
     local output
     output=$(pnpm "$script_name" 2>&1)
     local exit_code=$?
-    DETAILS="${DETAILS}\n\n--- pnpm ${script_name} ---\n${output}"
+    DETAILS="${DETAILS}"$'\n\n'"--- pnpm ${script_name} ---"$'\n'"${output}"
     if [ $exit_code -ne 0 ]; then
-      ERRORS="${ERRORS}pnpm ${script_name} 失敗\n"
+      ERRORS="${ERRORS}pnpm ${script_name} 失敗"$'\n'
     fi
   fi
 }
@@ -49,21 +49,15 @@ fi
 RETRY_COUNT=$((RETRY_COUNT + 1))
 echo "$RETRY_COUNT" > "$COUNTER_FILE"
 
+emit_block() {
+  printf '%s' "$1" | node -e 'const fs=require("fs");console.log(JSON.stringify({decision:"block",reason:fs.readFileSync(0,"utf8")}))'
+}
+
 if [ "$RETRY_COUNT" -ge "$MAX_RETRIES" ]; then
   rm -f "$COUNTER_FILE"
-  cat <<JSON
-{
-  "decision": "block",
-  "reason": "CI検証が${MAX_RETRIES}回連続で失敗しました。自動修正を中断し、ユーザーに報告してください。\n\n${ERRORS}${DETAILS}"
-}
-JSON
+  emit_block "CI検証が${MAX_RETRIES}回連続で失敗しました。自動修正を中断し、ユーザーに報告してください。"$'\n\n'"${ERRORS}${DETAILS}"
   exit 0
 fi
 
 REMAINING=$((MAX_RETRIES - RETRY_COUNT))
-cat <<JSON
-{
-  "decision": "block",
-  "reason": "CI検証失敗（試行 ${RETRY_COUNT}/${MAX_RETRIES}）。残り${REMAINING}回です。\n\n${ERRORS}${DETAILS}"
-}
-JSON
+emit_block "CI検証失敗（試行 ${RETRY_COUNT}/${MAX_RETRIES}）。残り${REMAINING}回です。"$'\n\n'"${ERRORS}${DETAILS}"

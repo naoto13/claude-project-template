@@ -37,7 +37,7 @@ for PKG in $PACKAGES; do
   REGISTRY_DATA=$(curl -sf --max-time 5 "https://registry.npmjs.org/$PKG_NAME" 2>/dev/null)
 
   if [ -z "$REGISTRY_DATA" ]; then
-    WARNINGS="${WARNINGS}\n- ${PKG_NAME}: npm registryで見つかりません（存在しないパッケージ）"
+    WARNINGS="${WARNINGS}"$'\n'"- ${PKG_NAME}: npm registryで見つかりません（存在しないパッケージ）"
     continue
   fi
 
@@ -46,7 +46,7 @@ for PKG in $PACKAGES; do
   DOWNLOADS=$(echo "$DL_DATA" | jq -r '.downloads // 0' 2>/dev/null)
 
   if [ "$DOWNLOADS" != "null" ] && [ "$DOWNLOADS" -lt 1000 ] 2>/dev/null; then
-    WARNINGS="${WARNINGS}\n- ${PKG_NAME}: weekly downloads が少ない (${DOWNLOADS}/week)"
+    WARNINGS="${WARNINGS}"$'\n'"- ${PKG_NAME}: weekly downloads が少ない (${DOWNLOADS}/week)"
   fi
 
   # 作成日確認（30日以内）
@@ -57,7 +57,7 @@ for PKG in $PACKAGES; do
     if [ -n "$CREATED_TS" ]; then
       AGE_DAYS=$(( (NOW_TS - CREATED_TS) / 86400 ))
       if [ "$AGE_DAYS" -lt 30 ]; then
-        WARNINGS="${WARNINGS}\n- ${PKG_NAME}: 作成から${AGE_DAYS}日しか経っていません（30日未満）"
+        WARNINGS="${WARNINGS}"$'\n'"- ${PKG_NAME}: 作成から${AGE_DAYS}日しか経っていません（30日未満）"
       fi
     fi
   fi
@@ -92,7 +92,7 @@ for PKG in $PACKAGES; do
       # 80%以上一致 かつ 完全一致でない → typosquatting疑い
       THRESHOLD=$(( MIN_LEN * 80 / 100 ))
       if [ "$COMMON" -ge "$THRESHOLD" ] && [ "$BASE_NAME" != "$POP" ]; then
-        WARNINGS="${WARNINGS}\n- ${PKG_NAME}: '${POP}' に酷似（typosquatting の可能性）"
+        WARNINGS="${WARNINGS}"$'\n'"- ${PKG_NAME}: '${POP}' に酷似（typosquatting の可能性）"
         break
       fi
     fi
@@ -100,15 +100,13 @@ for PKG in $PACKAGES; do
 done
 
 if [ -n "$WARNINGS" ]; then
-  cat <<EOF
-{
-  "hookSpecificOutput": {
-    "hookEventName": "PreToolUse",
-    "permissionDecision": "ask",
-    "permissionDecisionReason": "NPM SECURITY WARNING: パッケージに懸念があります。$(echo -e "$WARNINGS")\n\nインストールを続行しますか？"
-  }
-}
-EOF
+  printf '%s' "$WARNINGS" | jq -Rs '{
+    hookSpecificOutput: {
+      hookEventName: "PreToolUse",
+      permissionDecision: "ask",
+      permissionDecisionReason: ("NPM SECURITY WARNING: パッケージに懸念があります。" + . + "\n\nインストールを続行しますか？")
+    }
+  }'
   exit 0
 fi
 
